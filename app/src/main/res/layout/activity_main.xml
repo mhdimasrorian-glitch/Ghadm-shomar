@@ -1,1 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#F5F7FB">
 
+<ScrollView android:id="@+id/scrollRoot" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/tabBar" android:fillViewport="true">
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <!-- Header -->
+    <LinearLayout android:orientation="horizontal" android:background="@drawable/bg_header" android:padding="22dp" android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:text="بگردش" android:textSize="28sp" android:textStyle="bold" android:textColor="#FFFFFF" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/coinBadge" android:text="۰ سکه" android:textSize="15sp" android:textStyle="bold" android:textColor="#FFFFFF" android:background="@drawable/bg_badge" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- HOME SECTION -->
+    <LinearLayout android:id="@+id/sectionHome" android:orientation="vertical" android:padding="18dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+
+        <LinearLayout android:orientation="vertical" android:background="@drawable/bg_card" android:elevation="3dp" android:padding="20dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/status" android:text="ورود با شماره موبایل" android:textSize="15sp" android:textColor="#475569" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            <EditText android:id="@+id/phone" android:hint="شماره موبایل" android:inputType="phone" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            <EditText android:id="@+id/code" android:hint="کد ۶ رقمی OTP" android:inputType="number" android:visibility="gone" android:layout_marginTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            <Button android:id="@+id/otp" android:text="دریافت کد ورود" android:layout_marginTop="14dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout android:orientation="vertical" android:gravity="center" android:background="@drawable/bg_steps_circle" android:padding="26dp" android:layout_marginTop="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/steps" android:text="۰ قدم" android:textSize="38sp" android:textStyle="bold" android:textColor="#F97316" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:id="@+id/todayCoins" android:text="امروز: ۰ سکه کسب شده" android:textSize="14sp" android:textColor="#78716C" android:gravity="center" android:layout_marginTop="6dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <Button android:id="@+id/sync" android:text="خواندن و همگام‌سازی قدم‌ها" android:layout_marginTop="16dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView android:text="جایزه روزانه" android:textSize="17sp" android:textStyle="bold" android:textColor="#1E293B" android:layout_marginTop="22dp" android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <LinearLayout android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/bg_card" android:elevation="3dp" android:padding="18dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/dailyRewardText" android:text="جایزه امروزت رو دریافت نکردی" android:textColor="#475569" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center_vertical"/>
+            <Button android:id="@+id/claimDaily" android:text="دریافت" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- CHALLENGES SECTION -->
+    <LinearLayout android:id="@+id/sectionChallenges" android:orientation="vertical" android:padding="18dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:text="چالش‌های فعال" android:textSize="20sp" android:textStyle="bold" android:textColor="#1E293B" android:layout_marginBottom="6dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <LinearLayout android:id="@+id/challengesList" android:orientation="vertical" android:layout_marginTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- STORE SECTION -->
+    <LinearLayout android:id="@+id/sectionStore" android:orientation="vertical" android:padding="18dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:text="فروشگاه جوایز" android:textSize="20sp" android:textStyle="bold" android:textColor="#1E293B" android:layout_marginBottom="6dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <LinearLayout android:id="@+id/storeList" android:orientation="vertical" android:layout_marginTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- REFERRAL SECTION -->
+    <LinearLayout android:id="@+id/sectionReferral" android:orientation="vertical" android:padding="18dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:text="دعوت از دوستان" android:textSize="20sp" android:textStyle="bold" android:textColor="#1E293B" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <TextView android:text="به ازای هر دوست که با کد شما عضو شود، ۲۰۰ سکه جایزه می‌گیرید." android:textSize="14sp" android:textColor="#64748B" android:layout_marginTop="6dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <LinearLayout android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/bg_card" android:elevation="3dp" android:padding="18dp" android:layout_marginTop="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/referralCode" android:text="------" android:textSize="22sp" android:textStyle="bold" android:textColor="#F97316" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+            <Button android:id="@+id/copyReferral" android:text="کپی" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <TextView android:id="@+id/inviteCount" android:text="تعداد دعوت‌های موفق: ۰" android:textSize="14sp" android:textColor="#64748B" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <TextView android:text="کد معرف دارید؟" android:textSize="16sp" android:textStyle="bold" android:textColor="#1E293B" android:layout_marginTop="26dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/referralInput" android:hint="کد معرف را وارد کنید" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <Button android:id="@+id/applyReferral" android:text="ثبت کد" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- WALLET / WITHDRAW SECTION -->
+    <LinearLayout android:id="@+id/sectionWallet" android:orientation="vertical" android:padding="18dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:text="کیف پول" android:textSize="20sp" android:textStyle="bold" android:textColor="#1E293B" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/walletBalance" android:text="موجودی: ۰ ریال معادل" android:textSize="17sp" android:textColor="#1E293B" android:textStyle="bold" android:padding="20dp" android:gravity="center" android:background="@drawable/bg_steps_circle" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <TextView android:text="برداشت وجه" android:textSize="16sp" android:textStyle="bold" android:textColor="#1E293B" android:layout_marginTop="22dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/withdrawAmount" android:hint="مبلغ برداشت (ریال)" android:inputType="number" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/sheba" android:hint="شماره شبا (IR...)" android:layout_marginTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <Button android:id="@+id/withdraw" android:text="درخواست برداشت" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <TextView android:text="تاریخچه تراکنش‌ها" android:textSize="16sp" android:textStyle="bold" android:textColor="#1E293B" android:layout_marginTop="26dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <LinearLayout android:id="@+id/txHistory" android:orientation="vertical" android:layout_marginTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>
+
+<!-- BOTTOM TAB BAR -->
+<LinearLayout android:id="@+id/tabBar" android:layout_alignParentBottom="true" android:orientation="horizontal" android:background="@drawable/bg_tabbar" android:elevation="12dp" android:paddingTop="4dp" android:layout_width="match_parent" android:layout_height="64dp">
+    <Button android:id="@+id/tabHome" android:text="خانه" android:textColor="#F97316" android:textSize="12sp" android:background="@null" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent"/>
+    <Button android:id="@+id/tabChallenges" android:text="چالش‌ها" android:textColor="#64748B" android:textSize="12sp" android:background="@null" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent"/>
+    <Button android:id="@+id/tabStore" android:text="فروشگاه" android:textColor="#64748B" android:textSize="12sp" android:background="@null" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent"/>
+    <Button android:id="@+id/tabReferral" android:text="دعوت" android:textColor="#64748B" android:textSize="12sp" android:background="@null" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent"/>
+    <Button android:id="@+id/tabWallet" android:text="کیف پول" android:textColor="#64748B" android:textSize="12sp" android:background="@null" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent"/>
+</LinearLayout>
+
+</RelativeLayout>
